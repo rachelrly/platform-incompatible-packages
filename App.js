@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
-import { StyleSheet, SafeAreaView, Pressable } from 'react-native'
+import { StyleSheet, Pressable, View } from 'react-native'
+import BlurView from './BlurView'
 import MyModal from './MyModal'
 
 export default function App() {
   const [visible, setVisible] = useState(false)
   const closeModal = () => setVisible(false)
   const openModal = () => setVisible(true)
+  console.log('THE MODAL STATE IS VISIBLE:', visible)
 
   const view1 = {...styles.block, backgroundColor: 'red'}
   const view2 = {...styles.block, backgroundColor: 'orange'}
@@ -13,13 +15,15 @@ export default function App() {
   const view4 = {...styles.block, backgroundColor: 'blue'}
 
   return (
-    <SafeAreaView style={styles.container}>
-      <MyModal visible={visible} closeModal={closeModal}/>
-      <Pressable style={view1} onPress={openModal}/>
-      <Pressable style={view2} onPress={openModal}/>
-      <Pressable style={view3} onPress={openModal}/>
-      <Pressable style={view4} onPress={openModal}/>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <BlurView visible={visible}>
+        <MyModal visible={visible} closeModal={closeModal}/>
+        <Pressable style={view1} onPress={openModal}/>
+        <Pressable style={view2} onPress={openModal}/>
+        <Pressable style={view3} onPress={openModal}/>
+        <Pressable style={view4} onPress={openModal}/>
+      </BlurView>
+    </View>
   );
 }
 
