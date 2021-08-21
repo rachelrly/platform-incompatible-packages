@@ -15,9 +15,9 @@ export default function App() {
   const view4 = {...styles.block, backgroundColor: 'blue'}
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
+      <MyModal visible={visible} closeModal={closeModal}/>
       <BlurView visible={visible}>
-        <MyModal visible={visible} closeModal={closeModal}/>
         <Pressable style={view1} onPress={openModal}/>
         <Pressable style={view2} onPress={openModal}/>
         <Pressable style={view3} onPress={openModal}/>

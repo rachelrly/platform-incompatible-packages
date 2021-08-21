@@ -3,10 +3,13 @@ import {Text, View, Modal, Pressable, StyleSheet} from 'react-native'
 
 export default function MyModal({closeModal, visible}){
     return (
-        <View style={styles.container}>
-            <Modal visible={visible} style={styles.modal} animationType="slide">
-                <View style={styles.block}>
-                    <Text>This is my modal!</Text>
+        <View style={styles.modal_container}>
+            <Modal visible={visible} style={styles.modal} 
+            animationType="slide" 
+            transparent 
+            presentationStyle='overFullScreen'>
+                <View style={styles.modal_inner_container}>
+                    <Text style={styles.block_text}>This is my modal!</Text>
                 </View>
                 <CloseButton closeModal={closeModal}/>
             </Modal>
@@ -17,7 +20,7 @@ export default function MyModal({closeModal, visible}){
 
 function CloseButton({closeModal}){
     return (
-        <Pressable onPress={closeModal}>
+        <Pressable onPress={closeModal} style={styles.button}>
             <View>
                 <Text>Close modal</Text>
             </View>
@@ -27,25 +30,37 @@ function CloseButton({closeModal}){
 
 
 const styles = StyleSheet.create({
-    container: {
+    modal_container: {
         flex: 1,
-        display: 'flex',
-        height: '100%',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#000'
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
     },
     modal: {
-      height: '50%',
-      width: '50%',
-      backgroundColor: '#000',
-      alignItems: 'center',
-      justifyContent: 'center',
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
     },
-    block: {
-      backgroundColor: '#fff'
+    modal_inner_container: {
+      marginTop: 100,
+      alignSelf: 'center'
     },
-    blur: {}
+    block_text: {
+        color: '#fff',
+        fontSize: 24,
+    },
+    button: {
+        margin: 100,
+        marginTop: 150,
+        height: 50,
+        alignSelf: 'center',
+        width: 100,
+        borderRadius: 5,
+        backgroundColor: '#03DAC5',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
   });
   
