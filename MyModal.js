@@ -31,16 +31,14 @@ function CloseButton({closeModal}){
 
 const styles = StyleSheet.create({
     modal_container: {
-        flex: 1,
+        flex: 0,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 22
     },
     modal: {
-        margin: 20,
+        flex: 1,
         backgroundColor: "white",
         borderRadius: 20,
-        padding: 35,
         alignItems: "center",
     },
     modal_inner_container: {
@@ -48,8 +46,8 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
     },
     block_text: {
-        color: '#fff',
         fontSize: 24,
+        color: 'white'
     },
     button: {
         margin: 100,
