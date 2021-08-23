@@ -1,14 +1,4 @@
-import {View, StyleSheet} from 'react-native'
-
-export default function ModalWithBackground({children}){
-    return (
-        <View style={styles.modal}>{children}</View>
-    )
+export default function ModalWithBackground(){
+    return null
 }
 
-const styles = StyleSheet.create({
-    modal: {
-        backgroundColor: '#000',
-        opacity: 3,
-    }
-})

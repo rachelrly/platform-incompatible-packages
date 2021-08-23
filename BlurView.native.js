@@ -2,11 +2,9 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { BlurView } from '@react-native-community/blur'
 
-export default function NativeBlurView({children}){
+export default function NativeBlurView(){
     return (
-        <BlurView blurType='light' style={styles.blur} blurAmount={70}>
-            {children}
-        </BlurView>
+        <BlurView blurType='light' style={styles.blur} blurAmount={70}/> 
     )
 }
 
